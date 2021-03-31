@@ -15,10 +15,12 @@ tree = Tree("[link=https://www.informatik.uni-leipzig.de/~akiki/]Christopher Aki
 python_tree = tree.add("Lorem Ipsum")
 python_tree.add("[link=https://www.informatik.uni-leipzig.de/~akiki/]Lorem Ipsum")
 python_tree.add("[link=https://www.informatik.uni-leipzig.de/~akiki/]Lorem Ipsum")
-python_tree.add("[link=https://www.informatik.uni-leipzig.de/~akiki/]Lorem Ipsum")
 full_stack_tree = tree.add("Lorem Ipsum")
-tree.add("Lorem Ipsum")
-tree.add("Lorem Ipsum")
+full_stack_tree.add("Lorem Ipsum")
+tree.add("Lorem ipsum dolor sit amet")
+tree.add("Lorem ipsum dolor sit amet")
+tree.add("Lorem ipsum dolor sit amet")
+
 
 about = """\
 
