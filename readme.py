@@ -7,8 +7,9 @@ from rich.columns import Columns
 from rich.console import Console
 from rich.panel import Panel
 from rich.tree import Tree
+import subprocess
 
-console = Console(record=True, width=100)
+console = Console(record=True, width=250)
 
 tree = Tree("[link=https://www.informatik.uni-leipzig.de/~akiki/]Christopher Akiki", guide_style="bold")
 python_tree = tree.add("Lorem Ipsum")
@@ -29,7 +30,10 @@ panel = Panel.fit(
     about, box=box.DOUBLE, border_style="royal_blue1", title="[b]Hello, friend!", width=60
 )
 
-console.print(Columns([panel, tree]))
+process = subprocess.run(['cowsay',"I'm a cow"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
+cowsay = process.stdout
+
+console.print(Columns([cowsay, panel, tree]))
 
 CONSOLE_HTML_FORMAT = """\
 <pre style="font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace">{code}</pre>
