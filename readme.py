@@ -12,13 +12,13 @@ import subprocess
 console = Console(record=True, width=200)
 
 tree = Tree("[link=https://www.informatik.uni-leipzig.de/~akiki/]Christopher Akiki", guide_style="bold")
-python_tree = tree.add("Lorem Ipsum")
-python_tree.add("[link=https://www.informatik.uni-leipzig.de/~akiki/]Lorem Ipsum")
-python_tree.add("[link=https://www.informatik.uni-leipzig.de/~akiki/]Lorem Ipsum")
+interest_tree = tree.add("Interests")
+interest_tree.add("Representation Learning")
+interest_tree.add("Language Generation")
+interest_tree.add("Text Mining")
+interest_tree.add("Dataset Creation")
 full_stack_tree = tree.add("Lorem Ipsum")
 full_stack_tree.add("Lorem Ipsum")
-tree.add("Lorem ipsum dolor sit amet")
-tree.add("Lorem ipsum dolor sit amet")
 tree.add("Lorem ipsum dolor sit amet")
 
 
@@ -32,7 +32,7 @@ panel = Panel.fit(
     about, box=box.DOUBLE, border_style="royal_blue1", title="[b]Hello, friend!", width=40
 )
 
-process = subprocess.run(['cowsay',"I'm a cow"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
+process = subprocess.run(['cowsay',"Ceci n'est pas une vache"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
 cowsay = process.stdout
 
 console.print(Columns([cowsay, panel, tree]))
