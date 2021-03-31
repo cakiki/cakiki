@@ -9,7 +9,7 @@ from rich.panel import Panel
 from rich.tree import Tree
 import subprocess
 
-console = Console(record=True, width=250)
+console = Console(record=True, width=200)
 
 tree = Tree("[link=https://www.informatik.uni-leipzig.de/~akiki/]Christopher Akiki", guide_style="bold")
 python_tree = tree.add("Lorem Ipsum")
@@ -27,7 +27,7 @@ about = """\
 [royal_blue1]Follow me on twitter [bold link=https://twitter.com/christopher]@christopher[/]"""
 
 panel = Panel.fit(
-    about, box=box.DOUBLE, border_style="royal_blue1", title="[b]Hello, friend!", width=60
+    about, box=box.DOUBLE, border_style="royal_blue1", title="[b]Hello, friend!", width=40
 )
 
 process = subprocess.run(['cowsay',"I'm a cow"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
