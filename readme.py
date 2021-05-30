@@ -40,7 +40,7 @@ cows = [cow.split('.')[0] for cow in cows]
 cow = choice(cows)
 print(cow)
 fortune = subprocess.run(["fortune"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
-cowsay = subprocess.run(['cowsay', '-f', f'{cow}, 'f"{fortune.stdout}"], stdout=subprocess.PIPE, check=True, universal_newlines=True)
+cowsay = subprocess.run(['cowsay', '-f', f'{cow}', f'{fortune.stdout}'], stdout=subprocess.PIPE, check=True, universal_newlines=True)
 cowsay = cowsay.stdout
 
 console.print(Columns([cowsay, panel, tree]))
