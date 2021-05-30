@@ -32,7 +32,8 @@ panel = Panel.fit(
     about, box=box.DOUBLE, border_style="royal_blue1", title="[b]Hello, friend!", width=40
 )
 
-process = subprocess.run(['cowsay',"Ceci n'est pas une vache"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
+# process = subprocess.run(['cowsay',"Ceci n'est pas une vache"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
+process = subprocess.run(['fortune',"|", "cowsay"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
 cowsay = process.stdout
 
 console.print(Columns([cowsay, panel, tree]))
