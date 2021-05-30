@@ -10,9 +10,11 @@ from rich.tree import Tree
 import subprocess
 import os
 from random import choice
+import datetime
 
+###########################################################################################################
 console = Console(record=True, width=200)
-
+###########################################################################################################
 tree = Tree("[link=https://www.informatik.uni-leipzig.de/~akiki/]Christopher Akiki", guide_style="bold")
 interest_tree = tree.add("Interests")
 interest_tree.add("Representation Learning")
@@ -31,12 +33,11 @@ cowsay = subprocess.run(['cowsay', '-f', f'{cow}', f'{fortune.stdout}'], stdout=
 cowsay = cowsay.stdout
 ###########################################################################################################
 about = ''
-about += f'{cow}'
-about += '\n\n[italic]This message was brought to you by [bold link=https://en.wikipedia.org/wiki/Cowsay]cowsay[/], [bold link=https://en.wikipedia.org/wiki/Fortune_(Unix)]fortune[/] and [bold link=https://github.com/willmcgugan/rich]Rich[/]. '
+about += f'\n\n[italic]This message was brought to you by [bold link=https://en.wikipedia.org/wiki/Cowsay]cowsay[/] {cow}, [bold link=https://en.wikipedia.org/wiki/Fortune_(Unix)]fortune[/] and [bold link=https://github.com/willmcgugan/rich]Rich[/]. '
 about += "\n\n[bold]Follow me on twitter: [bold link=https://twitter.com/christopher]@christopher[/]"
 ###########################################################################################################
 
-panel = Panel.fit(about, box=box.ASCII, border_style="royal_blue1", title="[b]Hello, friend!", width=40)
+panel = Panel.fit(about, box=box.ASCII, border_style="royal_blue1", title=f'[b]{datetime.date.today()}', width=40)
 
 console.print(Columns([cowsay, panel, tree]))
 
