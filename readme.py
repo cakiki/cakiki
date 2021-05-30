@@ -33,8 +33,8 @@ panel = Panel.fit(
 )
 
 # process = subprocess.run(['cowsay',"Ceci n'est pas une vache"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
-fortune = subprocess.run(["fortune"], check=True, universal_newlines=True)
-cowsay = subprocess.run(['cowsay',f"{fortune.stdout}"], check=True, universal_newlines=True)
+fortune = subprocess.run(["fortune"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
+cowsay = subprocess.run(['cowsay',f"{fortune.stdout}"], stdout=subprocess.PIPE, check=True, universal_newlines=True)
 cowsay = cowsay.stdout
 
 console.print(Columns([cowsay, panel, tree]))
