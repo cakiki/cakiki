@@ -18,5 +18,7 @@ jobs:
         run: sudo apt-get install cowsay
       - name: Install Rich
         run: pip3 install rich
+      - name: Setup Git
+        run: git config --global user.name "cakiki" && git config --global user.email "cakiki@protonmail.com"
       - name: Generate README.md and commit
         run: cd $GITHUB_WORKSPACE && ./readme.py && git add README.md && git commit -m "Generate new README file" && git push origin
