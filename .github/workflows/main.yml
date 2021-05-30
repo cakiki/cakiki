@@ -19,4 +19,4 @@ jobs:
       - name: Install Rich
         run: pip3 install rich
       - name: Generate README.md and commit
-        run: ./readmy.py && git add README.md && git commit -m "Generate new README file" && git push origin
+        run: cd $GITHUB_WORKSPACE && ./readmy.py && git add README.md && git commit -m "Generate new README file" && git push origin
