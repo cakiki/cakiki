@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # Based on Will McGugan https://github.com/willmcgugan/willmcgugan/blob/master/willmcgugan.py
-# Uses Will McGugan fantastic Rich library to generate markdown https://rich.readthedocs.io/en/latest/
+# Uses Will McGugan's fantastic Rich library to generate markdown https://rich.readthedocs.io/en/latest/
 
 from rich import box
 from rich.columns import Columns
@@ -33,8 +33,9 @@ panel = Panel.fit(
 )
 
 # process = subprocess.run(['cowsay',"Ceci n'est pas une vache"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
-process = subprocess.run(['fortune',"|", "cowsay"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
-cowsay = process.stdout
+fortune = subprocess.run(["fortune"], check=True, universal_newlines=True)
+cowsay = subprocess.run(['cowsay',f"{fortune.stdout}"], check=True, universal_newlines=True)
+cowsay = cowsay.stdout
 
 console.print(Columns([cowsay, panel, tree]))
 
