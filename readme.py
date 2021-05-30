@@ -8,6 +8,8 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.tree import Tree
 import subprocess
+import os
+from random import choice
 
 console = Console(record=True, width=200)
 
@@ -33,8 +35,10 @@ panel = Panel.fit(
 )
 
 # process = subprocess.run(['cowsay',"Ceci n'est pas une vache"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
+cows = os.listdir('/usr/share/cowsay/cows/')
+cows = [cow.split('.')[0] for cow in cows]
 fortune = subprocess.run(["fortune"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
-cowsay = subprocess.run(['cowsay',f"{fortune.stdout}"], stdout=subprocess.PIPE, check=True, universal_newlines=True)
+cowsay = subprocess.run(['cowsay',f"{fortune.stdout}", '-f', f'{choice(cows)}'], stdout=subprocess.PIPE, check=True, universal_newlines=True)
 cowsay = cowsay.stdout
 
 console.print(Columns([cowsay, panel, tree]))
