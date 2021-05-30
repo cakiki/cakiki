@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install cowsay
+        run: sudo apt-get install cowsay
       - name: Install Rich
         run: pip3 install rich
       - name: Generate README.md and commit
