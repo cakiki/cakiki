@@ -38,7 +38,7 @@ panel = Panel.fit(
 cows = os.listdir('/usr/share/cowsay/cows/')
 cows = [cow.split('.')[0] for cow in cows]
 fortune = subprocess.run(["fortune"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
-cowsay = subprocess.run(['cowsay',f"{fortune.stdout}", '-f', f'{choice(cows)}'], stdout=subprocess.PIPE, check=True, universal_newlines=True)
+cowsay = subprocess.run(['cowsay', '-f', f'{choice(cows)}, 'f"{fortune.stdout}"], stdout=subprocess.PIPE, check=True, universal_newlines=True)
 cowsay = cowsay.stdout
 
 console.print(Columns([cowsay, panel, tree]))
