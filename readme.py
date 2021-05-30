@@ -31,8 +31,8 @@ cowsay = subprocess.run(['cowsay', '-f', f'{cow}', f'{fortune.stdout}'], stdout=
 cowsay = cowsay.stdout
 ###########################################################################################################
 about = ''
-about.append('[italic]This message was brought to you by cowsay, fortune and Rich. ')
-about.append("[bold]Follow me on twitter: [bold link=https://twitter.com/christopher]@christopher[/]")
+about += '[italic]This message was brought to you by cowsay, fortune and Rich. '
+about += "[bold]Follow me on twitter: [bold link=https://twitter.com/christopher]@christopher[/]"
 ###########################################################################################################
 
 panel = Panel.fit(about, box=box.ASCII, border_style="royal_blue1", title="[b]Hello, friend!", width=40)
