@@ -22,26 +22,20 @@ interest_tree.add("Dataset Creation")
 full_stack_tree = tree.add("Lorem Ipsum")
 full_stack_tree.add("Lorem Ipsum")
 tree.add("Lorem ipsum dolor sit amet")
-
-
-about = """\
-
-[italic]Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-[royal_blue1]Follow me on twitter [bold link=https://twitter.com/christopher]@christopher[/]"""
-
-panel = Panel.fit(
-    about, box=box.DOUBLE, border_style="royal_blue1", title="[b]Hello, friend!", width=40
-)
-
-# process = subprocess.run(['cowsay',"Ceci n'est pas une vache"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
+###########################################################################################################
 cows = os.listdir('/usr/share/cowsay/cows/')
 cows = [cow.split('.')[0] for cow in cows]
 cow = choice(cows)
-print(cow)
 fortune = subprocess.run(["fortune"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
 cowsay = subprocess.run(['cowsay', '-f', f'{cow}', f'{fortune.stdout}'], stdout=subprocess.PIPE, check=True, universal_newlines=True)
 cowsay = cowsay.stdout
+###########################################################################################################
+about = ''
+about.append('[italic]This message was brought to you by cowsay, fortune and Rich. ')
+about.append("[bold]Follow me on twitter: [bold link=https://twitter.com/christopher]@christopher[/]")
+###########################################################################################################
+
+panel = Panel.fit(about, box=box.ASCII, border_style="royal_blue1", title="[b]Hello, friend!", width=40)
 
 console.print(Columns([cowsay, panel, tree]))
 
