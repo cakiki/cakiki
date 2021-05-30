@@ -21,4 +21,9 @@ jobs:
       - name: Setup Git
         run: git config --global user.name "cakiki" && git config --global user.email "cakiki@protonmail.com"
       - name: Generate README.md and commit
-        run: cd $GITHUB_WORKSPACE && ./readme.py && git add README.md && git commit -m "Generate new README file" && git push origin
+        run: |
+          cd $GITHUB_WORKSPACE 
+          ./readme.py
+          git add README.md || echo "No changes to file"
+          git commit -m "Generate new README file" || echo "Nothing to commit"
+          git push origin || echo "Nothing to commit"
