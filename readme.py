@@ -33,7 +33,7 @@ cowsay = subprocess.run(['cowsay', '-f', f'{cow}', f'{fortune.stdout}'], stdout=
 cowsay = cowsay.stdout
 ###########################################################################################################
 about = ''
-about += f'\n\n[italic]This message was brought to you by [bold link=https://en.wikipedia.org/wiki/Cowsay]cowsay[/] {cow}, [bold link=https://en.wikipedia.org/wiki/Fortune_(Unix)]fortune[/] and [bold link=https://github.com/willmcgugan/rich]Rich[/]. '
+about += f'\n\n[italic]This message was brought to you by the [bold link=https://en.wikipedia.org/wiki/Cowsay]cowsay[/] {cow}, [bold link=https://en.wikipedia.org/wiki/Fortune_(Unix)]fortune[/] and [bold link=https://github.com/willmcgugan/rich]Rich[/]. '
 about += "\n\n[bold]Follow me on twitter: [bold link=https://twitter.com/christopher]@christopher[/]"
 ###########################################################################################################
 
