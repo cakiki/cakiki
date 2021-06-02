@@ -33,9 +33,11 @@ cowsay = subprocess.run(['cowsay', '-f', f'{cow}', f'{fortune.stdout}'], stdout=
 cowsay = cowsay.stdout
 ###########################################################################################################
 about = ''
+about += '\n'
 about += "Hello, friend."
 about += f'\n\n[italic]This auto-generated message panel was brought to you by the [bold link=https://en.wikipedia.org/wiki/Cowsay]cowsay[/] {cow}, [bold link=https://en.wikipedia.org/wiki/Fortune_(Unix)]fortune[/] and [bold link=https://github.com/willmcgugan/rich]Rich[/]. '
 about += "\n\n[bold]Follow me on twitter: [bold link=https://twitter.com/christopher]@christopher[/]"
+about += '\n'
 ###########################################################################################################
 date = datetime.date.today()
 day = date.strftime('%A')
