@@ -31,7 +31,8 @@ location.add("Leipzig, Germany")
 cows = os.listdir('/usr/share/cowsay/cows/')
 cows = [cow.split('.')[0] for cow in cows]
 cow = choice(cows)
-fortune = subprocess.run(["fortune"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
+# fortune = subprocess.run(["fortune"], check=True, stdout=subprocess.PIPE, universal_newlines=True)
+fortune = 'Fortune is on hiatus'
 cowsay = subprocess.run(['cowsay', '-f', f'{cow}', f'{fortune.stdout}'], stdout=subprocess.PIPE, check=True, universal_newlines=True)
 cowsay = cowsay.stdout
 cowsay_height = cowsay.count('\n') - 1
